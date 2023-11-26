@@ -2,7 +2,7 @@
 Some image processing utility scripts I made for my art projects.
 
 ## Image Grid:
-Combines a set of images into a new image, making a grid arrangement. Parameters must be set in the script, and include the width and height for the images to be resized and/or cropped to if required, and the number of columns and rows for the grid. If the number is larger then the amount of images, some spaces will be left blank. When the script is run, a dialog will open so the directory of the images can be selected.
+Combines a set of images into a new image, making a grid arrangement. Parameters must be set in the script, and include the width and height for the images to be resized and/or cropped to if required, and the number of columns and rows for the grid. If the number is larger then the amount of images, some spaces will be left blank. When the script is run, a dialog will open so the directory of the images can be selected. Below is an example of using it as a way to get an overview comparison of large sets of outputs from a generative art project. It can also be used to make more careful arrangements, but it requires manually renaming the files so it is a rather labor intensive and tedious process with larger image sets.
 
 ![image](https://github.com/Metamere/Image-Processing-Scripts/assets/62861841/bf08fdf8-8304-4ab6-97af-1428db895fd8)
 
