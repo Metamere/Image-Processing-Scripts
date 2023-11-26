@@ -9,24 +9,17 @@ from tkinter import *
 root = Tk()
 root.withdraw()
 folder_selected = filedialog.askdirectory()
-# print(folder_selected)
+
 # Get list of image paths
 image_paths_list = [os.path.join(folder_selected, f) for f in os.listdir(folder_selected) if f.endswith('.png')]
 
-# print(image_paths_list)
 
-# image_paths_list.sort
-
-# print(image_paths_list)
-
-
-def concat_images(size, shape=None):
+def image_grid(size, shape=None):
 
     # Open images and resize them
     images = map(PIL.Image.open, image_paths_list)
 
     images = [PIL.ImageOps.fit(img, size) for img in images]
-    # print('number', len(images))
     image_count = len(image_paths_list)
     print(image_count)
     width, height = size
@@ -40,7 +33,6 @@ def concat_images(size, shape=None):
     for col in range(shape_list[0]):
         for row in range(shape_list[1]):
             offset = (width * col, height * row)
-            # idx = row * shape_list[1] + col  ---WRONG!
             idx = row + col * shape_list[1]
             if idx == image_count:
                 return final_image
@@ -50,8 +42,8 @@ def concat_images(size, shape=None):
 
 
 # Create and save image grid
-image = concat_images(size=(421, 750), shape=(9, 4))  # width x height
+image = image_grid(size=(421, 750), shape=(9, 4))  # (width, height), (columns, rows)
 image.save('image' + str(random.randint(0, 100000000)) + '.png', 'PNG')
 
 
-# image = concat_images((800, 800), (3, 3))  # width x height
+# image = image_grid((800, 800), (3, 3))  # width x height
